@@ -16,7 +16,7 @@ public class totemPole : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (hasRan == false) {
-			if (cube4.transform.localPosition.y < 4) {
+			if (cube4.transform.localPosition.y < 4 || cube4.transform.localPosition.y > 5) {
 				RageBar.SubtractFive();
 				hasRan = true;
 			}

@@ -14,7 +14,7 @@ public class nuclearBomb : MonoBehaviour {
 	public Color white = new Color (255, 255, 255, 255);
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("Indexer", 0, 0.05f);
+		InvokeRepeating ("Indexer", 0, 0.1f);
 		bomb.Play ();
 		endingScreen = endingScreen.GetComponent<Canvas>();
 		totalTimeLasted = totalTimeLasted.GetComponent<Text> ();
@@ -30,11 +30,11 @@ public class nuclearBomb : MonoBehaviour {
 	}
 
 	void Indexer(){
-		if (index <= 216) {
+		if (index < 108) {
 			index++;
 			explosionImage.texture = images [index];
 		}
-		if (index == 216) {
+		if (index == 108) {
 			Application.LoadLevel (Application.loadedLevel);
 			Destroy(this);
 		}

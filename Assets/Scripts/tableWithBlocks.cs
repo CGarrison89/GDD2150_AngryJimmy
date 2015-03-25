@@ -15,7 +15,7 @@ public class tableWithBlocks : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (hasRan == false) {
-			if (cube5.transform.localPosition.z < 2.5) {
+			if (cube5.transform.localPosition.z < 2.5|| cube5.transform.localPosition.z > 3.5) {
 				RageBar.SubtractFive();
 				hasRan = true;
 			}

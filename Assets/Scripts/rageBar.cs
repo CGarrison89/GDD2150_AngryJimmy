@@ -29,8 +29,10 @@ public class rageBar : MonoBehaviour {
 	void Update () {
 		if (rageBarAmount == 100) {
 			CancelInvoke ();
-			nuclearExplosion.GetComponent<nuclearBomb>().enabled = true;
+			nuclearExplosion.GetComponent<nuclearBomb> ().enabled = true;
 			rageBarAmount = rageBarAmount + 1;
+		} else if (rageBarAmount == -1) {
+			CancelInvoke ();
 		}
 	}
 
@@ -58,6 +60,14 @@ public class rageBar : MonoBehaviour {
 		}
 		position.x = rageBarInitialLocation + rageBarAmount * 3.63f;
 		rageBarText.text = "Rage: " + rageBarAmount;
+		rageBarImage.transform.localPosition = position;
+	}
+
+	public void SubtractAll()
+	{
+		rageBarAmount = -1;
+		position.x = rageBarInitialLocation + (rageBarAmount + 1) * 3.63f;
+		rageBarText.text = "Rage: " + (rageBarAmount + 1);
 		rageBarImage.transform.localPosition = position;
 	}
 
